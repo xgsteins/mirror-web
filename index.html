@@ -202,6 +202,8 @@ $(document).ready(function(){
 	var help_page = {
 		'AOSP': '/wiki/aosp.md',
 		'archlinuxcn': '/wiki/archlinuxcn.md',
+		'aptex': '/wiki/aptex.md',
+		'archlinuxcn': '/wiki/archlinuxcn.md',
 		'homebrew': '/wiki/homebrew.md',
 		'linux.git': '/wiki/linux.md',
 		'nodesource': '/wiki/nodesource.md',
@@ -227,7 +229,13 @@ $(document).ready(function(){
 		'last_update': "-",
 		'name': 'npm',
 		'upstream': 'https://registry.npmjs.org/'
-	} 
+	},
+	{
+		'status': 'success',
+		'last_update': "-",
+		'name': 'aptex',
+		'upstream': 'https://mirrors.tuna.tsinghua.edu.cn/aptex/'
+	}
 	];
 
 	$('#HelpModal').on('show.bs.modal', function (event) {
