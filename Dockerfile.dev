@@ -10,5 +10,5 @@ RUN bundle config build.nokogiri --use-system-libraries
 VOLUME /src
 WORKDIR /src
 EXPOSE 4000
-CMD bundle install && jekyll server -H 0.0.0.0
+CMD bundle install && jekyll server --incremental  -H 0.0.0.0
 
