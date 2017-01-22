@@ -1,6 +1,10 @@
 [
   {
-    "name":"archlinux",
-    "desc":"Arch linux 是一个轻量的、灵活的Linux发行版"
+    "name": "archlinux",
+    "desc": "Arch Linux 的安装镜像和官方软件包仓库"
+  },
+  {
+    "name":"Ubuntu",
+    "desc":"Ubuntu 是受大家喜爱的发行版之一"
   }
 ]
