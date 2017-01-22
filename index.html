@@ -6,7 +6,7 @@ permalink: /
 	{% include head.html %}
 	<body>
 		{% include nav.html %}
-	
+
 		<div id="mirrors">
 			<div class="spacing hidden-xs"></div>
 
@@ -26,7 +26,7 @@ permalink: /
 								<tr v-for="mir in mirrorList" :class="['row', 'status-'+mir.status]">
 									<template v-if="mir.is_master">
 									<td class="col-md-8">
-										<a class="mirror-item-label"  data-toggle="popover" data-trigger="hover" data-placement="right" 
+										<a class="mirror-item-label"  data-toggle="popover" data-trigger="hover" data-placement="right"
 											:data-content="mir.description" :href="getURL(mir)">
 											{{mir.name}}
 											<span class="label label-new" v-if='mir.is_new'>new</span>
@@ -56,20 +56,20 @@ permalink: /
 						<div id="news">
 							<h4><span class="fa fa-bullhorn"></span> 新闻公告 </h4>
 							<ul>
-								{% for news in site.categories.news limit: 3%}
+								{% for news in site.categories.news limit: 1%}
 								<li><a href="/news/#{{news.slug}}"><strong>{{news.date | date: "%Y-%m-%d"}}</strong> {{news.title}}</a></li>
 								{% endfor %}
 							</ul>
 							<div class="text-right"><a href="/news/"> more <span class="fa fa-angle-double-right"></span> </a></div>
 						</div>
-						<div>
+						<!-- <div>
 							<h4> <span class="fa fa-link"></span> 域名选择 </h4>
 							<ul>
 								<li><a href="https://mirrors.tuna.tsinghua.edu.cn/">https://mirrors.tuna.tsinghua.edu.cn/</a> 自动选择 </li>
 								<li><a href="https://mirrors6.tuna.tsinghua.edu.cn/">https://mirrors6.tuna.tsinghua.edu.cn/</a> 只解析 IPv6</li>
 								<li><a href="https://mirrors4.tuna.tsinghua.edu.cn/">https://mirrors4.tuna.tsinghua.edu.cn/</a> 只解析 IPv4</li>
 							</ul>
-						</div>
+						</div> -->
 						<div id="download-link">
 							<h4><span class="fa fa-file-archive-o"></span> 下载链接 </h4>
 							<p>常用发行版 iso 和应用工具安装包直接下载</p>
