@@ -84,15 +84,13 @@ var vmMirList = new Vue({
 						d = $.extend(d, options[d.name]);
 					}
 					if(d.status==2&& d.exitcode==0){
-						d.label=label_map['success'];
 						d.status='success'
 					}else if(d.status==2&&d.exitcode!=0){
-						d.label=label_map['failed'];
 						d.status='failed'
 					}else if(d.status==1&&d.exitcode==0){
-						d.label=label_map['syncing'];
 						d.status='syncing'
 					}
+					d.label=label_map[d.status];
 					d.help_url = help_url[d.name];
 					d.is_new = new_mirrors[d.name];
 					d.description = descriptions[d.name];
