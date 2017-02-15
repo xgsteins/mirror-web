@@ -13,3 +13,4 @@
 vendor
 .DS_Store
 /static/mirrordsync.json
+/static/status_png/
