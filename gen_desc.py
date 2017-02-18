@@ -4,14 +4,14 @@ import json
 import urllib.request
 from collections import OrderedDict
 
-tunasync = json.loads(
+mirrordsync = json.loads(
     urllib.request
-    .urlopen("http://127.0.0.1:4000/static/tunasync.json")
+    .urlopen("http://127.0.0.1:4000/static/mirrordsync.json")
     .read()
     .decode('utf-8')
 )
 
-mirrors = list({t['name'] for t in tunasync})
+mirrors = list({t for t in mirrordsync})
 mirrors.sort()
 
 with open('_data/mirror_desc.json') as f:

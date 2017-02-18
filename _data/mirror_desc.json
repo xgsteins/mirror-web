@@ -1,10 +1,14 @@
 [
   {
     "name": "archlinux",
-    "desc": "Arch Linux 的安装镜像和官方软件包仓库"
+    "desc": ""
   },
   {
-    "name":"Ubuntu",
-    "desc":"Ubuntu 是受大家喜爱的发行版之一"
+    "name": "hombrew",
+    "desc": ""
+  },
+  {
+    "name": "ubuntu",
+    "desc": ""
   }
 ]

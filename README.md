@@ -1,23 +1,6 @@
-# TUNA mirrors 主页
+# NJUPT Mirrors 主页
 
-## 运行 Demo 
-
-本站使用 Jekyll 编写，并使用 babel 编译 ECMAScript6，因此必须安装 ruby >= 2.0 和 nodejs.
-
-```
-bundle install
-jekyll build
-```
-
-为正常运行，一些动态数据文件需要下载
-
-```
-wget https://mirrors.tuna.tsinghua.edu.cn/static/tunasync.json -O static/tunasync.json
-wget https://mirrors.tuna.tsinghua.edu.cn/static/tunet.json -O static/tunet.json
-wget https://mirrors.tuna.tsinghua.edu.cn/static/isoinfo.json -O static/isoinfo.json
-```
-
-之后 `jekyll serve` 即可运行 demo.
+## 这是南京邮电大学开源镜像站主页，本主页fork自<https://github.com/tuna/mirror-web>,并加以修改。
 
 ## 贡献文档
 
@@ -39,8 +22,4 @@ wget https://mirrors.tuna.tsinghua.edu.cn/static/isoinfo.json -O static/isoinfo.
 ### 特殊用法
 
 #### 表单选择
-例如 <http://mirrors.tuna.tsinghua.edu.cn/help/tensorflow/> 中，通过表单选择操作系统和版本号，建议直接使用 Vue.js
-
-
-
-
+例如 <http://mirrors.tuna.tsinghua.edu.cn/help/ubuntu> 中，通过表单选择操作系统和版本号，建议直接使用 Vue.js

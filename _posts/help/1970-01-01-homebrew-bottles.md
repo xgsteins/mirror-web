@@ -10,11 +10,11 @@ mirrorid: homebrew-bottles
 
 ### 临时替换
 ```bash
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.njupt.edu.cn/homebrew-bottles
 ```
 
 ### 长期替换
 ```bash
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' >> ~/.bash_profile
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.njupt.edu.cn/homebrew-bottles' >> ~/.bash_profile
 source ~/.bash_profile
 ```
