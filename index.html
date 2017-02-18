@@ -1,30 +1,29 @@
----
-permalink: /
----
+--- permalink: / ---
 <!DOCTYPE html>
 <html>
-	{% include head.html %}
-	<body>
-		{% include nav.html %}
+{% include head.html %}
 
-		<div id="mirrors">
-			<div class="spacing hidden-xs"></div>
+<body>
+	{% include nav.html %}
 
-			<div class="container">
-				<div class="row">
-					{% raw %}
-					<div class="col-md-8 table-responsive" id="mirror-list">
-						<h3><span class="fa fa-cube"></span> 镜像列表 </h3>
-						<table class="table" v-if="mirrorList.length">
-							<thead>
-								<tr class="row">
-									<th class="col-sm-8">Name</th>
-									<th class="col-sm-4">Last Update</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr v-for="mir in mirrorList" :class="['row', 'status-'+mir.status]">
-									<template v-if="mir.is_master">
+	<div id="mirrors">
+		<div class="spacing hidden-xs"></div>
+
+		<div class="container">
+			<div class="row">
+				{% raw %}
+				<div class="col-md-8 table-responsive" id="mirror-list">
+					<h3><span class="fa fa-cube"></span> 镜像列表 </h3>
+					<table class="table" v-if="mirrorList.length">
+						<thead>
+							<tr class="row">
+								<th class="col-sm-8">Name</th>
+								<th class="col-sm-4">Last Update</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="mir in mirrorList" :class="['row', 'status-'+mir.status]">
+								<template v-if="mir.is_master">
 									<td class="col-md-8">
 										<a class="mirror-item-label"  data-toggle="popover" data-trigger="hover" data-placement="right"
 											:data-content="mir.description" :href="getURL(mir)">
@@ -37,72 +36,75 @@ permalink: /
 										{{mir.last_update}}<span v-if="mir.show_status" :class="['label', 'label-status', mir.label, 'hidden-xs']">{{mir.status}}</span>
 									</td>
 									</template>
-								</tr>
-							</tbody>
-						</table>
-						<div v-else class="sk-wave">
-							<div class="sk-rect sk-rect1"></div>
-							<div class="sk-rect sk-rect2"></div>
-							<div class="sk-rect sk-rect3"></div>
-							<div class="sk-rect sk-rect4"></div>
-							<div class="sk-rect sk-rect5"></div>
-						</div>
-					</div>
-					{% endraw %}
-					<div class="col-md-4">
-						<div class="spacing hidden-xs"></div>
-						<div id="wizard">
-						</div>
-						<div id="news">
-							<h4><span class="fa fa-bullhorn"></span> 新闻公告 </h4>
-							<ul>
-								{% for news in site.categories.news limit: 1%}
-								<li><a href="/news/#{{news.slug}}"><strong>{{news.date | date: "%Y-%m-%d"}}</strong> {{news.title}}</a></li>
-								{% endfor %}
-							</ul>
-							<div class="text-right"><a href="/news/"> more <span class="fa fa-angle-double-right"></span> </a></div>
-						</div>
-						<div id="download-link">
-							<h4><span class="fa fa-file-archive-o"></span> 下载链接 </h4>
-							<p>常用发行版 iso 和应用工具安装包直接下载</p>
-							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#isoModal">
-								获取下载链接
-							</button>
-						</div>
-						<div>
-							<h4> <span class="fa fa-envelope-o"></span> 联系我们 </h4>
-							<ul>
-								<li><strong>意见反馈</strong> <br /> <a href="https://github.com/NJUPT-Mirrors-Group/issues">https://github.com/NJUPT-Mirrors-Group/issues</a></li>
-								<li><strong>发送邮件</strong> <br /> <a id="eib1gieB"></a></li>
-							</ul>
-						</div>
-						<div>
-							<h4> <span class="fa fa-external-link"></span> 相关链接 </h4>
-							<ul>
-								<li><a href="/help/">使用帮助</a></li>
-								<li><a href="/status/#server-status">服务器状态</a></li>
-								<li><a href="/status/#syncing-status">同步状态</a></li>
-							</ul>
-						</div>
+							</tr>
+						</tbody>
+					</table>
+					<div v-else class="sk-wave">
+						<div class="sk-rect sk-rect1"></div>
+						<div class="sk-rect sk-rect2"></div>
+						<div class="sk-rect sk-rect3"></div>
+						<div class="sk-rect sk-rect4"></div>
+						<div class="sk-rect sk-rect5"></div>
 					</div>
 				</div>
-			</div><!--/container -->
-		</div><!--/mirrors -->
+				{% endraw %}
+				<div class="col-md-4">
+					<div class="spacing hidden-xs"></div>
+					<div id="wizard">
+					</div>
+					<div id="news">
+						<h4><span class="fa fa-bullhorn"></span> 新闻公告 </h4>
+						<ul>
+							{% for news in site.categories.news limit: 1%}
+							<li><a href="/news/#{{news.slug}}"><strong>{{news.date | date: "%Y-%m-%d"}}</strong> {{news.title}}</a></li>
+							{% endfor %}
+						</ul>
+						<div class="text-right"><a href="/news/"> more <span class="fa fa-angle-double-right"></span> </a></div>
+					</div>
+					<div id="download-link">
+						<h4><span class="fa fa-file-archive-o"></span> 下载链接 </h4>
+						<p>常用发行版 iso 和应用工具安装包直接下载</p>
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#isoModal">
+								获取下载链接
+							</button>
+					</div>
+					<div>
+						<h4> <span class="fa fa-envelope-o"></span> 联系我们 </h4>
+						<ul>
+							<li><strong>意见反馈</strong> <br /> <a href="https://github.com/NJUPT-Mirrors-Group/issues">https://github.com/NJUPT-Mirrors-Group/issues</a></li>
+							<li><strong>发送邮件</strong> <br />
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4> <span class="fa fa-external-link"></span> 相关链接 </h4>
+						<ul>
+							<li><a href="/help/">使用帮助</a></li>
+							<li><a href="/status/#server-status">服务器状态</a></li>
+							<li><a href="/status/#syncing-status">同步状态</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/container -->
+	</div>
+	<!--/mirrors -->
 
-		{% include footer.html %}
-		<!-- iso download wizard modal -->
-		<!-- Modal -->
-		{% raw %}
-		<div class="modal fade" id="isoModal" tabindex="-1" role="dialog" aria-labelledby="isoModalLabel" aria-hidden="true">
-		  <div class="modal-dialog modal-lg" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	{% include footer.html %}
+	<!-- iso download wizard modal -->
+	<!-- Modal -->
+	{% raw %}
+	<div class="modal fade" id="isoModal" tabindex="-1" role="dialog" aria-labelledby="isoModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
-		        <h4 class="modal-title" id="isoModalLabel">获取安装镜像</h4>
-		      </div>
-		      <div class="modal-body">
+					<h4 class="modal-title" id="isoModalLabel">获取安装镜像</h4>
+				</div>
+				<div class="modal-body">
 					<div class="row">
 						<div class="col-md-12">
 							<ul class="nav nav-tabs">
@@ -127,16 +129,17 @@ permalink: /
 						</div>
 					</div>
 
-		      </div>
-		    </div>
-		  </div>
-		</div><!-- /iso download wizard modal -->
-		{% endraw %}
-
-	</body>
-	{% raw %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /iso download wizard modal -->
 	{% endraw %}
-	<script src="/static/js/index.js"></script>
+
+</body>
+{% raw %} {% endraw %}
+<script src="/static/js/index.js"></script>
+
 </html>
 <!--
 	vim: ts=2 sts=2 sw=2 noexpandtab
