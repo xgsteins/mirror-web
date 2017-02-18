@@ -145,5 +145,4 @@ def getImageList():
 
 if __name__ == "__main__":
     import sys
-    logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
     print(getImageList())
