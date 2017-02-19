@@ -11,6 +11,6 @@ github-webhook  --port=9999 \
   --log=/var/log/webhook.log \
   --rule="push:ref == refs/heads/$BRANCH:/data/script/pull.sh" &
 
-jekyll build --watch &
+jekyll build --watch --source /data --destination /site  &
 
 wait
