@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d /source/.git ]; then
+if [ ! -d /data/.git ]; then
   git clone $REPO /source
 fi
 
