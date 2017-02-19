@@ -15,3 +15,5 @@ vendor
 /static/mirrordsync.json
 /static/status_png/
 repositories
+mirrordsync.json
+isoinfo.json

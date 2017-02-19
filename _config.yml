@@ -6,11 +6,11 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 清华大学开源软件镜像站
-brand: Tsinghua Open Source Mirrors
+title: 南京邮电大学开源软件镜像站
+brand: NJUPT Open Source Mirrors
 baseurl: "" # the subpath of your site, e.g. /blog
 permalink: "/:categories/:title/"
-url: "https://mirrors.tuna.tsinghua.edu.cn"
+url: "https://mirrors.njupt.edu.cn"
 
 # Build settings
 highlighter: rouge

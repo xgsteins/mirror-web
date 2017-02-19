@@ -71,7 +71,7 @@ var vmMirList = new Vue({
 		},
 		refreshMirrorList () {
 			var self = this;
-			$.getJSON("/static/mirrordsync.json", (status_data) => {
+			$.getJSON("/mirrordsync.json", (status_data) => {
 				var  mirrors=[],mir_data=status_data;
 				var mir_uniq = {}; // for deduplication
 				for(var k in mir_data) {
@@ -127,7 +127,7 @@ var vmIso = new Vue({     //TODO  isolist needed to be fixed
 	},
 	created: function () {
 		var self = this;
-		$.getJSON("/static/isoinfo.json", function (isoinfo) {
+		$.getJSON("/isoinfo.json", function (isoinfo) {
 			self.distroList = isoinfo;
 			self.selected = self.curDistroList[0];
 			if (window.location.hash.match(/#iso-download(\?.*)?/)) {

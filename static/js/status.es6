@@ -12,7 +12,7 @@ $(document).ready(() => {
 	// });
 
 	window.refreshMirrorList = () => {
-		$.getJSON("/static/mirrordsync.json", (status_data) => {
+		$.getJSON("/mirrordsync.json", (status_data) => {
 			var mirrors=[], mir_data=status_data;
 			for(var k in mir_data) {
 				var d = mir_data[k];

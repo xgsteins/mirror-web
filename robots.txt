@@ -1,4 +1,4 @@
-# robots.txt for https://mirrors.tuna.tsinghua.edu.cn
+# robots.txt for https://mirrors.njupt.edu.cn
 User-agent: *
 
 Disallow: /AOSP
