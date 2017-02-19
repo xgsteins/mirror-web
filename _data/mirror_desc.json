@@ -1,7 +1,7 @@
 [
   {
     "name": "archlinux",
-    "desc": ""
+    "desc": "Archlinux 的官方镜像和官方软件包仓库"
   },
   {
     "name": "hombrew",
