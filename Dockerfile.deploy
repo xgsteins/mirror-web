@@ -2,7 +2,7 @@ FROM ruby:2.3
 
 
 
-RUN mkdir /data
+RUN mkdir /data && mkdir /site
 ADD   . /data
 WORKDIR /data
 
