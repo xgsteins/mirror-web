@@ -1,6 +1,5 @@
 FROM alpine:3.3
 MAINTAINER Xuanwo <xuanwo.cn@gmail.com>
-COPY repositories    /etc/apk/repositories 
 RUN apk add --update \
     nodejs ruby ruby-dev ruby-rdoc ruby-irb ruby-io-console ruby-nokogiri \
     gcc libc-dev libffi-dev zlib-dev libxml2-dev libxslt-dev build-base \
