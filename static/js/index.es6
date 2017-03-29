@@ -51,7 +51,8 @@ var mir_tmpl = $("#template").text(),
 		'maven':{'url':"/help/maven/"},
 		'npm':{'url':"/help/npm"},
 		'pypi':{'url':"/help/pypi"},
-		'rubygems':{'url':"/help/rubygems"}
+		'rubygems':{'url':"/help/rubygems"},
+		'homebrew':{'url':"/help/homebrew"}
 	},
 	descriptions = {
 		{% for mir in site.data.mirror_desc %} '{{mir.name}}': '{{mir.desc}}' {% if forloop.index < forloop.length %},{% endif %}{% endfor %}
