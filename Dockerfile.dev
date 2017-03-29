@@ -1,10 +1,11 @@
 FROM alpine:3.3
-MAINTAINER Xuanwo <xuanwo.cn@gmail.com>
+MAINTAINER airbob,gu <guliujian@qq.com>
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk add --update \
-    nodejs ruby ruby-dev ruby-rdoc ruby-irb ruby-io-console ruby-nokogiri \
+	ca-certificates  nodejs ruby ruby-dev ruby-rdoc ruby-irb ruby-io-console ruby-nokogiri \
     gcc libc-dev libffi-dev zlib-dev libxml2-dev libxslt-dev build-base \
-    && rm -rf /var/cache/apk/*
-RUN gem sources --add http://gems.ruby-china.org/ --remove https://rubygems.org/
+   &&  update-ca-certificates && rm -rf /var/cache/apk/*
+RUN gem sources --add http://mirrors.njupt.edu.cn/nexus/repository/rubygems/  --remove https://rubygems.org/
 RUN gem install bundler
 RUN bundle config build.nokogiri --use-system-libraries
 VOLUME /src

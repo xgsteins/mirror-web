@@ -21,30 +21,37 @@ var mir_tmpl = $("#template").text(),
 		{% for n in site.new_mirrors %}"{{n}}": true{% if forloop.index < forloop.length %},{% endif %}{% endfor %}
 	},
 
-	unlisted = [
-	],
+	unlisted = {
+		"maven":{
+			"status":2,
+			"date":"-",
+			"upstream":"https://repo1.maven.org/maven2/",
+			"exitcode":0
+		},
+		"npm":{
+			"status":2,
+			"date":"-",
+			"upstream":"https://registry.npmjs.org",
+			"exitcode":0
+		},
+		"pypi":{
+			"status":2,
+			"date":"-",
+			"upstream":"https://pypi.python.org/",
+			"exitcode":0
+		},
+		"rubygems":{
+			"status":2,
+			"date":"-",
+			"upstream":"https://rubygems.org",
+			"exitcode":0
+		}
+	},
 	options = {
-		'AOSP': {
-			'url': "/help/AOSP/"
-		},
-		'homebrew': {
-			'url': "/help/homebrew/"
-		},
-		'linux.git': {
-			'url': "/help/linux.git/"
-		},
-		'linux-stable.git': {
-			'url': "/help/linux-stable.git/"
-		},
-		'git-repo': {
-			'url': "/help/git-repo/"
-		},
-		'chromiumos': {
-			'url': "/help/chromiumos/"
-		},
-		'weave': {
-			'url': "/help/weave/"
-		},
+		'maven':{'url':"/help/maven/"},
+		'npm':{'url':"/help/npm"},
+		'pypi':{'url':"/help/pypi"},
+		'rubygems':{'url':"/help/rubygems"}
 	},
 	descriptions = {
 		{% for mir in site.data.mirror_desc %} '{{mir.name}}': '{{mir.desc}}' {% if forloop.index < forloop.length %},{% endif %}{% endfor %}
@@ -72,14 +79,23 @@ var vmMirList = new Vue({
 		refreshMirrorList () {
 			var self = this;
 			$.getJSON("/mirrordsync.json", (status_data) => {
-				var  mirrors=[],mir_data=status_data;
+				var mirrors=[],mir_data=$.extend(status_data, unlisted);
 				var mir_uniq = {}; // for deduplication
-				for(var k in mir_data) {
-					var d = mir_data[k];
+				// mir_data.sort((a, b) => { return a.name < b.name ? -1: 1 });
+				var sortable =[];
+				for (var j in mir_data){
+					sortable.push([j,mir_data[j]])
+				}
+				sortable.sort(function(a,b){
+					return a<b ? -1:1
+				});
+				// console.log(sortable[0][1].status)
+				for(var k in sortable) {
+					var d = sortable[k][1];
 					if (d.status == "disabled") {
 						continue;
 					}
-					d.name=k;
+					d.name=sortable[k][0];
 					if (options[d.name] != undefined ) {
 						d = $.extend(d, options[d.name]);
 					}
