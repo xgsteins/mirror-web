@@ -9,9 +9,10 @@
 1. Fork 本项目并 clone
 2. 创建分支 `git checkout -b foo-doc`
 3. 在 `_posts/help` 中建立文档文件，文件名格式为 `年-月-日-名称.md`
-4. 用 markdown 语法编写文档
-5. 提交并推送代码
-6. 发送 Pull Request
+4. 按照相关模板文件建立
+5. 用 markdown 语法编写文档
+6. 提交并推送代码
+7. 发送 Pull Request
 
 ### 写作规范
 
